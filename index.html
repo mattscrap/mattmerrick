@@ -3,631 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 Websites Challenge - Matt Merrick</title>
+    <title>Matt Merrick - Niche Tools & Text Reels</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
+            padding: 40px 20px;
+            background: #ffffff;
+            color: #1a1a1a;
         }
         .header {
             text-align: center;
+            margin-bottom: 60px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
             margin-bottom: 40px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .project-card {
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
         }
         .cta-button {
             display: inline-block;
-            background: #0066cc;
+            padding: 12px 24px;
+            background: #1a1a1a;
             color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 20px 0;
-            transition: background 0.3s;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.2s;
         }
         .cta-button:hover {
-            background: #0052a3;
+            background: #333;
         }
         .contact {
-            margin: 20px 0;
-            font-size: 0.9em;
-            color: #666;
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
         }
         .contact a {
-            color: #0066cc;
+            color: #1a1a1a;
             text-decoration: none;
+            margin: 0 10px;
         }
         .contact a:hover {
             text-decoration: underline;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        th {
-            background-color: #0066cc;
-            color: white;
-        }
-        tr:hover {
-            background-color: #f8f9fa;
-        }
-        .earnings {
-            font-family: monospace;
-            font-weight: bold;
-        }
-        .positive-earnings {
-            color: #2ecc71;
-        }
-        .total-row {
-            background-color: #f0f0f0;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h1 style="margin: 0;">Building 100 Websites in 2025 🚀</h1>
-            <a href="/blog/6-sites-in-48-hours.html" 
-               style="padding: 8px 16px; 
-                      background-color: #f8f9fa; 
-                      border-radius: 6px; 
-                      text-decoration: none; 
-                      color: #0066cc;
-                      font-weight: 500;
-                      transition: background-color 0.2s;">
-                Read the Blog →
-            </a>
-        </div>
-        <p>Hey, I'm Matt! I'm building 100 micro-websites throughout 2025 and sharing the journey publicly.</p>
-        <p>Want to build your own portfolio of sites?</p>
-        <a href="https://nichetools.net" class="cta-button">Get My Database of 40,000+ website Ideas that anyone can build. →</a>
-        <div class="contact">
-            <p>Follow the journey:</p>
-            <p>
-                <a href="https://x.com/mattmerrick16" target="_blank">Twitter/X: @mattmerrick16</a>
-                <br>
-                <a href="mailto:mattmerrickbiz@gmail.com">Email: mattmerrickbiz@gmail.com</a>
-            </p>
-            <h2>Subscribe to My newsletter <a href="https://awesome.tools">Awesome Tools</a>></h2>
-            
+        <h1>Matt Merrick</h1>
+        <p class="tagline">Building niche tools and text reels</p>
+    </div>
+
+    <div class="projects">
+        <div class="project-card">
+            <h2 class="project-title">Niche Tools</h2>
+            <p class="project-description">A collection of specialized tools and calculators for specific needs.</p>
+            <a href="https://nichetools.net" class="cta-button">View Tools →</a>
+            </div>
+        <div class="project-card">
+            <h2 class="project-title">Text Reels</h2>
+            <p class="project-description">Creating engaging text-based content for social media.</p>
+            <a href="https://textreels.net" class="cta-button">View Examples →</a>
         </div>
     </div>
 
-    <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center;">
-            <div>
-                <h3 style="font-size: 2rem; font-weight: bold; color: #2ecc71; margin-bottom: 5px;">$1,002</h3>
-                <p style="color: #666; font-size: 0.9rem;">January 2025 Revenue</p>
-            </div>
-            <div>
-                <h3 style="font-size: 2rem; font-weight: bold; color: #3498db; margin-bottom: 5px;">119</h3>
-                <p style="color: #666; font-size: 0.9rem;">Total Sites</p>
-            </div>
-            <div>
-                <h3 style="font-size: 2rem; font-weight: bold; color: #2ecc71; margin-bottom: 5px;">2</h3>
-                <p style="color: #666; font-size: 0.9rem;">Revenue Generating</p>
-            </div>
-            <div>
-                <h3 style="font-size: 2rem; font-weight: bold; color: #e74c3c; margin-bottom: 5px;">20</h3>
-                <p style="color: #666; font-size: 0.9rem;">In Development</p>
-            </div>
-        </div>
-        <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #666;">
-            <p>Building in public: 2/100 sites are making money. Follow along as I build more! 🚀</p>
-        </div>
+    <div class="contact">
+        <a href="https://x.com/mattmerrick16" target="_blank">Twitter</a>
+        <a href="mailto:mattmerrickbiz@gmail.com">Email</a>
     </div>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Domain Name</th>
-                <th>January 2025 Earnings</th>
-            </tr>
-        </thead>
-        <tbody>
-         <tr>
-                    <td>resumebulletpointgenerator.com</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>microsaasideas.net</td>
-                    <td>$1,000</td>
-                </tr>
-                <tr>
-                    <td>nichetools.net</td>
-                    <td>$2</td>
-                </tr>
-                <tr>
-                    <td>646areacode.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>99dollar.site</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>affiliatefinder.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>aiornot.space</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>aitooltesters.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>arebanksopentoday.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>awesome.tools</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>bluedinnerplates.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>buyselldirectories.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>buysellwebtools.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>catcalculators.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>chatgptresumebuilder.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>chatgptresumeprompts.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>cm2inches.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>coolemailmarketing.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>countdowntillchristmas.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>creatortools.org</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>csv.directory</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>csv.so</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>csvtohtml.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>customgptdirectory.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>dailyaffirmationgenerator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>disappear.app</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>dogcalculators.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>donothingforaminute.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>drawingideas.art</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>editpfp.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>emddomains.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>emdomains.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>eyecolorgenerator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>ezgradecalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>financialcalc.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>findasideproject.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>foilcalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>freeresumebuilder.site</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>freeseochecker.io</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>gamerlingo.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>gamerslangwords.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>gamingsetups.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>gasalarycalculator.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>howmanydaystillblackfriday.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>howmanydaystillchristmas.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>howmanydaystillmay.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>howmanydaystillsuperbowl.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>ideaplaybook.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>indiehackerhomepage.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>internetslangwords.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>investmentcalculator.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>isthisaiornot.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>istodayfriday.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>jsontoexcel.org</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>keywordextractor.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>keywordideas.co</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>keywordunlimited.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>leastcommonmultiplecalculator.org</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>lifebalancesimulator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>liiinks.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>liters.to</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>literstogallons.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>loremfaces.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>lowdrsites.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>marooncolor.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>matrixadditioncalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>matrixcalculator.app</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>matrixsubtractioncalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>mattmerrick.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>matts.fund</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>merrickrestaurants.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>miamimarketingpros.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>monetizedbyads.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>moneymarketcalculator.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>months2years.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>mylocationnow.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>nameofbusinessgenerator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>newyorkareacodes.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>newyorkzipcodes.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>nextjsboilerplates.dev</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>nicheideas.io</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>nsm.gg</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>osugpacalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>pfp.design</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>png2ico.org</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>promptmasters.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>quickseochecker.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>quik.directory</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>random-generators.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>randomemojigenerator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>randommemegenerator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>rugsizecalculator.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>rutgersgpacalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>shiplocal.directory</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>sidehustleideas.io</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>snowdaycalulator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>stanleyreviews.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>startupdirectories.co</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>stumblerr.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>stumbling.lol</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>submit25.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>supercooltools.co</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>systemofinequalities.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>tealcolor.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>tenstacks.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>thecalculatorworld.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>thisisthegreatestwebsiteontheinternet.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>toolentry.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>torqueconverter.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>turd.meme</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>under2k.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>variancecalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>wavingpanda.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>webtooldevs.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>weeks2months.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>whatismyscreensize.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>whatmonthisit.net</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>wheredoibuystamps.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>wisconsinpropertytaxcalculator.com</td>
-                    <td>$0</td>
-                </tr>
-                <tr>
-                    <td>yearlywagecalculator.com</td>
-                    <td>$0</td>
-                </tr>
-           
-            <tr class="total-row">
-                <td>Total Earnings</td>
-                <td class="earnings positive-earnings">$1,002</td>
-            </tr>
-        </tbody>
-    </table>
 </body>
 </html> 
