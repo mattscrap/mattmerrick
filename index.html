@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Merrick - Niche Tools & Subscription Tracker + Prompty</title>
+    <title>Matt Merrick - Tools</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 40px 20px;
             background: #ffffff;
@@ -16,61 +17,63 @@
         }
         .header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             color: #1a1a1a;
         }
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
+        .tools-list {
+            list-style: none;
+            padding: 0;
         }
-        .project-card {
-            padding: 30px;
-            background: #f8f9fa;
-            border-radius: 12px;
-            transition: transform 0.2s;
+        .tool-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .project-card:hover {
-            transform: translateY(-5px);
+        .tool-item:last-child {
+            border-bottom: none;
         }
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+        .tool-icon {
+            width: 24px;
+            color: #666;
+            text-align: center;
+        }
+        .tool-content {
+            flex: 1;
+        }
+        .tool-title {
+            font-size: 1.1rem;
             color: #1a1a1a;
-        }
-        .project-description {
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background: #1a1a1a;
-            color: white;
             text-decoration: none;
-            border-radius: 6px;
             font-weight: 500;
-            transition: background 0.2s;
         }
-        .cta-button:hover {
-            background: #333;
+        .tool-title:hover {
+            color: #666;
+        }
+        .tool-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 2px;
+        }
+        .tool-link {
+            color: #1a1a1a;
+            text-decoration: none;
         }
         .contact {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 40px;
+            margin-top: 40px;
+            padding-top: 20px;
             border-top: 1px solid #eee;
         }
         .contact a {
@@ -81,41 +84,117 @@
         .contact a:hover {
             text-decoration: underline;
         }
+        .category {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 30px 0 10px 0;
+            padding-left: 39px;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Matt Merrick</h1>
-        <p class="tagline">Building niche tools and text reels</p>
+        <p class="tagline">Tools & Projects</p>
     </div>
 
-    <div class="projects">
-       <div class="project-card">
-            <h2 class="project-title">LLM SEO Guide</h2>
-            <p class="project-description">Learn how to rank for LLM SEO</p>
-            <a href="https://llmseoguide.com" class="cta-button">View Tools →</a>
+    <div class="category">Projects</div>
+    <ul class="tools-list">
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-robot"></i></div>
+            <div class="tool-content">
+                <a href="https://llmlogs.com" class="tool-title">LLM Logs</a>
+                <div class="tool-description">Learn how to rank for LLM SEO</div>
             </div>
-         <div class="project-card">
-            <h2 class="project-title">LLM Blogging</h2>
-            <p class="project-description">Unlimited Blogging for $9/month </p>
-            <a href="https://llmblogging.com" class="cta-button">View Tools →</a>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-pen-fancy"></i></div>
+            <div class="tool-content">
+                <a href="https://cite.sh" class="tool-title">Cite.sh</a>
+                <div class="tool-description">Unlimited Blogging for $9/month</div>
             </div>
-        <div class="project-card">
-            <h2 class="project-title">Niche Tools</h2>
-            <p class="project-description">A collection of specialized tools and calculators for specific needs.</p>
-            <a href="https://nichetools.net" class="cta-button">View Tools →</a>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-tools"></i></div>
+            <div class="tool-content">
+                <a href="https://nichetools.net" class="tool-title">Niche Tools</a>
+                <div class="tool-description">A collection of 100k web tool keywords</div>
             </div>
-        <div class="project-card">
-            <h2 class="project-title">Prompty</h2>
-            <p class="project-description">A collection of prompts.</p>
-            <a href="https://prompty.bot" class="cta-button">View Tools →</a>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-magic"></i></div>
+            <div class="tool-content">
+                <a href="https://prompty.bot" class="tool-title">Prompty</a>
+                <div class="tool-description">A collection of prompts</div>
             </div>
-        <div class="project-card">
-            <h2 class="project-title">Subscription Tracker</h2>
-            <p class="project-description">Track All Subscriptions from one place. </p>
-            <a href="https://subscriptiontracker.net" class="cta-button">View Examples →</a>
-        </div>
-    </div>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-receipt"></i></div>
+            <div class="tool-content">
+                <a href="https://subscriptiontracker.net" class="tool-title">Subscription Tracker</a>
+                <div class="tool-description">Track All Subscriptions from one place</div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="category">Acquired Businesses</div>
+    <ul class="tools-list">
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="tool-content">
+                <a href="https://pfpresizer.com" class="tool-title">PDF Resizer</a>
+                <div class="tool-description">Resize and optimize PDF files</div>
+            </div>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-rocket"></i></div>
+            <div class="tool-content">
+                <a href="https://explodingniches.co" class="tool-title">Exploding Niches</a>
+                <div class="tool-description">Discover trending niche opportunities</div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="category">Utility Tools</div>
+    <ul class="tools-list">
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+            <div class="tool-content">
+                <a href="https://freebudgettool.com" class="tool-title">Free Budget Tool</a>
+                <div class="tool-description">Simple and free budget tracking tool</div>
+            </div>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-image"></i></div>
+            <div class="tool-content">
+                <a href="https://png2ico.org" class="tool-title">PNG to ICO Converter</a>
+                <div class="tool-description">Convert PNG images to ICO format</div>
+            </div>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-key"></i></div>
+            <div class="tool-content">
+                <a href="https://keywordextractor.net" class="tool-title">Keyword Extractor</a>
+                <div class="tool-description">Extract keywords from any text</div>
+            </div>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-desktop"></i></div>
+            <div class="tool-content">
+                <a href="https://whatismyscreensize.com" class="tool-title">Screen Size Checker</a>
+                <div class="tool-description">Check your current screen dimensions</div>
+            </div>
+        </li>
+        <li class="tool-item">
+            <div class="tool-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="tool-content">
+                <a href="https://mylocationnow.net" class="tool-title">Location Finder</a>
+                <div class="tool-description">Find your current location</div>
+            </div>
+        </li>
+    </ul>
 
     <div class="contact">
         <a href="https://x.com/mattmerrick16" target="_blank">Twitter</a>
