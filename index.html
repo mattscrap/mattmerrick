@@ -1,354 +1,902 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Merrick - Tools</title>
+    <title>Matt Merrick Sites & Domains for Sale</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            max-width: 700px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-            background: #ffffff;
+            background: #f8f9fa;
             color: #1a1a1a;
         }
         .header {
             text-align: center;
             margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         h1 {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #1a1a1a;
         }
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
-        .tools-list {
-            list-style: none;
-            padding: 0;
+        .contact-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2196f3;
         }
-        .tool-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+        .contact-info h2 {
+            margin: 0 0 15px 0;
+            color: #1976d2;
+            font-size: 1.3rem;
+        }
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
             display: flex;
             align-items: center;
-            gap: 15px;
-        }
-        .tool-item:last-child {
-            border-bottom: none;
-        }
-        .tool-icon {
-            width: 24px;
-            color: #666;
-            text-align: center;
-        }
-        .tool-content {
-            flex: 1;
-        }
-        .tool-title {
-            font-size: 1.1rem;
-            color: #1a1a1a;
+            gap: 8px;
+            color: #1976d2;
             text-decoration: none;
             font-weight: 500;
+            padding: 8px 16px;
+            border: 2px solid #1976d2;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
-        .tool-title:hover {
-            color: #666;
+        .contact-links a:hover {
+            background: #1976d2;
+            color: white;
         }
-        .tool-description {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 2px;
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
-        .tool-link {
-            color: #1a1a1a;
-            text-decoration: none;
-        }
-        .contact {
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        .contact a {
-            color: #1a1a1a;
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1976d2;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .domains-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .domains-header {
+            background: #1976d2;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .domains-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .domains-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .domains-table th {
+            background: #f5f5f5;
+            padding: 15px 20px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .domains-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .domains-table tr:hover {
+            background: #f8f9fa;
+        }
+        .domain-name {
+            font-weight: 500;
+            color: #1976d2;
+        }
+        .domain-name a {
+            color: #1976d2;
             text-decoration: none;
-            margin: 0 10px;
         }
-        .contact a:hover {
+        .domain-name a:hover {
             text-decoration: underline;
         }
-        .category {
-            font-size: 0.8rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 30px 0 10px 0;
-            padding-left: 39px;
+        .status {
+            font-size: 0.85rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .status-website {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        .status-domain {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        .price {
+            font-weight: 600;
+            color: #2e7d32;
+        }
+        .price-high {
+            color: #d32f2f;
+        }
+        .price-medium {
+            color: #f57c00;
+        }
+        .price-low {
+            color: #388e3c;
+        }
+        .newsletter-info {
+            background: #fff3e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid #ff9800;
+        }
+        .newsletter-info h3 {
+            margin: 0 0 10px 0;
+            color: #e65100;
+        }
+        .sold-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        .sold-header {
+            background: #4caf50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .sold-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .sold-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .sold-domain {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #4caf50;
+            font-weight: 500;
+            color: #333;
+        }
+        @media (max-width: 768px) {
+            .domains-table {
+                font-size: 0.9rem;
+            }
+            .domains-table th,
+            .domains-table td {
+                padding: 10px 15px;
+            }
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
-
-<script
-defer
-data-website-id="67107b2afdb4b0f3e173a0b9"
-data-domain="mattmerrick.com"
-src="https://datafa.st/js/script.js">
-</script>
+    <script
+    defer
+    data-website-id="67107b2afdb4b0f3e173a0b9"
+    data-domain="mattmerrick.com"
+    src="https://datafa.st/js/script.js">
+    </script>
 </head>
 <body>
     <div class="header">
-        <h1>Matt Merrick</h1>
-        <p class="tagline">Tools & Projects</p>
+        <h1>Matt Merrick Sites & Domains</h1>
+        <p class="tagline">My personal websites and domains for sale</p>
+        
+        <div class="newsletter-info" style="margin-bottom: 20px;">
+            <h3><i class="fas fa-newspaper"></i> Newsletter Asset - $1,300</h3>
+            <p><strong>2,664 subscribers</strong> for 50 cents a sub which is only $1,300 - Indie hackers, solopreneurs, and entrepreneurs. No stats on most domains but they get traffic as they were keyword targeted. Some have stats - inquire for details.</p>
+        </div>
+
+        <div class="contact-info">
+            <h2><i class="fas fa-info-circle"></i> Domain & Website Sale</h2>
+            <p style="margin: 0 0 15px 0; color: #1976d2; font-weight: 500;">Some have full websites with assets, some are just domains. Prices aren't final - send your offers! Want to get rid of as many as possible.</p>
+            <p style="margin: 0 0 15px 0; color: #d32f2f; font-weight: 600; font-size: 1.1rem;">The more you buy, the bigger the discount! All sites must go. I am focusing on 1 site for the next year. Check it out at <a href="https://gdrip.co" target="_blank" style="color: #d32f2f; text-decoration: underline;">gdrip.co</a> - so the rest must go to pay bills.</p>
+            <div class="contact-links">
+                <a href="https://x.com/mattmerrick16" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                    Message me on X
+                </a>
+                <a href="mailto:mattmerrickbiz@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    Email: mattmerrickbiz@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">117</div>
+                <div class="stat-label">Domains Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">67</div>
+                <div class="stat-label">Live Websites</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$10-$1,000</div>
+                <div class="stat-label">Price Range</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2,600</div>
+                <div class="stat-label">Newsletter Subscribers</div>
+            </div>
+        </div>
     </div>
 
-    <div class="category">Growing Sites</div>
-    <ul class="tools-list">
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-tools"></i></div>
-            <div class="tool-content">
-                <a href="https://backlinkrocket.net" class="tool-title">Backlink Rocket</a>
-                <div class="tool-description">Boost your DR fast with over 10+ quality backlinks(limited spots) </div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-tools"></i></div>
-            <div class="tool-content">
-                <a href="https://nichetools.net" class="tool-title">Niche Tools</a>
-                <div class="tool-description">A collection of 100k web tool keywords under 20 Difficulty ready for you to build</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-user"></i></div>
-            <div class="tool-content">
-                <a href="https://mattmerrick.com" class="tool-title">Matt Merrick</a>
-                <div class="tool-description">Personal website and portfolio</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-robot"></i></div>
-            <div class="tool-content">
-                <a href="https://llmlogs.com" class="tool-title">LLM Logs</a>
-                <div class="tool-description">Learn how to rank for LLM SEO</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-pen-fancy"></i></div>
-            <div class="tool-content">
-                <a href="https://vibecoders.bio" class="tool-title">Vibecoder</a>
-                <div class="tool-description">A Link in bio for Vibe Coders - use code "LAUNCH2" to get access for only $9</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-lightbulb"></i></div>
-            <div class="tool-content">
-                <a href="https://microsaasideas.net" class="tool-title">Micro SaaS Ideas</a>
-                <div class="tool-description">Discover micro SaaS business ideas</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-magic"></i></div>
-            <div class="tool-content">
-                <a href="https://pmprompts.net" class="tool-title">PM Prompts</a>
-                <div class="tool-description">Product management prompts and resources</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-user-friends"></i></div>
-            <div class="tool-content">
-                <a href="https://loremfaces.com" class="tool-title">Lorem Faces</a>
-                <div class="tool-description">Generate placeholder faces for your projects</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-music"></i></div>
-            <div class="tool-content">
-                <a href="https://theindiewall.net" class="tool-title">The Indie Wall</a>
-                <div class="tool-description">100 spots , 100 indie hackers. </div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-rocket"></i></div>
-            <div class="tool-content">
-                <a href="https://buildtheidea.net" class="tool-title">Build The Idea</a>
-                <div class="tool-description">Your All-in-One Startup Assistant</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-quote-right"></i></div>
-            <div class="tool-content">
-                <a href="https://cite.sh" class="tool-title">Cite.sh</a>
-                <div class="tool-description">Citation and reference management tool</div>
-            </div>
-        </li>
-    </ul>
-
-    
-
-    <div class="category">Projects</div>
-    <ul class="tools-list">
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-magic"></i></div>
-            <div class="tool-content">
-                <a href="https://prompty.bot" class="tool-title">Prompty</a>
-                <div class="tool-description">A collection of prompts</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-receipt"></i></div>
-            <div class="tool-content">
-                <a href="https://subscriptiontracker.net" class="tool-title">Subscription Tracker</a>
-                <div class="tool-description">Track All Subscriptions from one place</div>
-            </div>
-        </li>
-    </ul>
-
-    <div class="category">Acquired Businesses</div>
-    <ul class="tools-list">
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-file-pdf"></i></div>
-            <div class="tool-content">
-                <a href="https://pfpresizer.com" class="tool-title">PFP Resizer</a>
-                <div class="tool-description">Resize and optimize PDF files</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-rocket"></i></div>
-            <div class="tool-content">
-                <a href="https://explodingniches.co" class="tool-title">Exploding Niches</a>
-                <div class="tool-description">Discover trending niche opportunities</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-water"></i></div>
-            <div class="tool-content">
-                <a href="https://poolvolumecalculator.com" class="tool-title">Pool Volume Calculator</a>
-                <div class="tool-description">Calculate your pool's water volume</div>
-            </div>
-        </li>
-    </ul>
-
-    <div class="category">Utility Tools</div>
-    <ul class="tools-list">
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-chart-line"></i></div>
-            <div class="tool-content">
-                <a href="https://moneymarketcalculator.net" class="tool-title">Money Market Calculator</a>
-                <div class="tool-description">Calculate potential returns from money market investments</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-ruler"></i></div>
-            <div class="tool-content">
-                <a href="https://cm2inches.net" class="tool-title">CM to Inches Converter</a>
-                <div class="tool-description">Convert centimeters to inches and vice versa</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-            <div class="tool-content">
-                <a href="https://leastcommonmultiplecalculator.org" class="tool-title">LCM Calculator</a>
-                <div class="tool-description">Calculate Least Common Multiple</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-calendar"></i></div>
-            <div class="tool-content">
-                <a href="https://howmanydaystillmay.com" class="tool-title">Days Until May</a>
-                <div class="tool-description">Countdown to May</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-calculator"></i></div>
-            <div class="tool-content">
-                <a href="https://freebudgettool.com" class="tool-title">Free Budget Tool</a>
-                <div class="tool-description">Simple and free budget tracking tool</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-image"></i></div>
-            <div class="tool-content">
-                <a href="https://png2ico.org" class="tool-title">PNG to ICO Converter</a>
-                <div class="tool-description">Convert PNG images to ICO format</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-key"></i></div>
-            <div class="tool-content">
-                <a href="https://keywordextractor.net" class="tool-title">Keyword Extractor</a>
-                <div class="tool-description">Extract keywords from any text</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-desktop"></i></div>
-            <div class="tool-content">
-                <a href="https://whatismyscreensize.com" class="tool-title">Screen Size Checker</a>
-                <div class="tool-description">Check your current screen dimensions</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div class="tool-content">
-                <a href="https://mylocationnow.net" class="tool-title">Location Finder</a>
-                <div class="tool-description">Find your current location</div>
-            </div>
-        </li>
-    </ul>
-
-    <div class="category">Sponsored</div>
-    <ul class="tools-list">
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-user"></i></div>
-            <div class="tool-content">
-                <a href="https://praneetbrar.com/" class="tool-title">Praneet Brar</a>
-                <div class="tool-description">Personal website and portfolio</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-star"></i></div>
-            <div class="tool-content">
-                <a href="https://auraplusplus.com/" class="tool-title">Aura++</a>
-                <div class="tool-description">The Ultimate Profile Builder for SEO & Authority</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-file-contract"></i></div>
-            <div class="tool-content">
-                <a href="https://contractaura.com/" class="tool-title">Contract Aura</a>
-                <div class="tool-description">Professional contract management and automation</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-clipboard-list"></i></div>
-            <div class="tool-content">
-                <a href="https://makemyplan.net/" class="tool-title">Make My Plan</a>
-                <div class="tool-description">Strategic planning and goal setting tools</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-folder"></i></div>
-            <div class="tool-content">
-                <a href="https://uno.directory/" class="tool-title">Uno Directory</a>
-                <div class="tool-description">Curated directory of the best online resources</div>
-            </div>
-        </li>
-        <li class="tool-item">
-            <div class="tool-icon"><i class="fas fa-envelope"></i></div>
-            <div class="tool-content">
-                <a href="https://nurturingmail.com/" class="tool-title">Nurturing Mail</a>
-                <div class="tool-description">Email nurturing and automation platform</div>
-            </div>
-        </li>
-    </ul>
-
-    <div class="contact">
-        <a href="https://x.com/mattmerrick16" target="_blank">Twitter</a>
-        <a href="mailto:mattmerrickbiz@gmail.com">Email</a>
+    <div class="domains-container">
+        <div class="domains-header">
+            <h2><i class="fas fa-globe"></i> Available Sites & Domains</h2>
+        </div>
+        <table class="domains-table">
+            <thead>
+                <tr>
+                    <th>Domain Name</th>
+                    <th>Status</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="domain-name"><a href="https://10ideas.net" target="_blank">10ideas.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">3dcartoongenerator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://41stacks.com" target="_blank">41stacks.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">60secondstories.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://646areacode.net" target="_blank">646areacode.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">aiagentdirectory.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">aiornot.space</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">airesponsegenerator.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">aitooltesters.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://arebanksopentoday.net" target="_blank">arebanksopentoday.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://barbersite.app" target="_blank">barbersite.app</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://buyselldirectories.com" target="_blank">buyselldirectories.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">catcalculators.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">chartty.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">chartyy.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://chatgptresumebuilder.com" target="_blank">chatgptresumebuilder.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://chatgptresumeprompts.com" target="_blank">chatgptresumeprompts.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://cm2inches.net" target="_blank">cm2inches.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://countdowntillchristmas.com" target="_blank">countdowntillchristmas.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">creatortools.org</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">csv.directory</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://csv.so" target="_blank">csv.so</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://csvtohtml.com" target="_blank">csvtohtml.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://cuberacinggame.com" target="_blank">cuberacinggame.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://customgptdirectory.com" target="_blank">customgptdirectory.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$300</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://dogcalculators.net" target="_blank">dogcalculators.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://donothingforaminute.com" target="_blank">donothingforaminute.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">downalert.co</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://drawingideas.art" target="_blank">drawingideas.art</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">easymerge.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">emddomains.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://emdomains.net" target="_blank">emdomains.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">eyecolorgenerator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://financialcalc.net" target="_blank">financialcalc.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">findasideproject.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://foilcalculator.com" target="_blank">foilcalculator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://freebudgettool.com" target="_blank">freebudgettool.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">freeresumebuilder.site</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">gamerlingo.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">gamerslangwords.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">gamingsetups.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">gasalarycalculator.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://gtp.bio" target="_blank">gtp.bio</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://howmanydaystillblackfriday.com" target="_blank">howmanydaystillblackfriday.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://howmanydaystillmay.com" target="_blank">howmanydaystillmay.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://howmanydaystillsuperbowl.com" target="_blank">howmanydaystillsuperbowl.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">ideaplaybook.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://idearoast.com" target="_blank">idearoast.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">ideasbot.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://indiehackerhomepage.com" target="_blank">indiehackerhomepage.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">internetslangwords.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://investmentcalculator.net" target="_blank">investmentcalculator.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$1,000</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">isthisaiornot.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://istodayfriday.net" target="_blank">istodayfriday.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$500</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://jsontoexcel.org" target="_blank">jsontoexcel.org</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">keywordbot.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://keywordextractor.net" target="_blank">keywordextractor.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://keywordideas.co" target="_blank">keywordideas.co</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">keywordideas.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://keywordunlimited.com" target="_blank">keywordunlimited.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://leadsaver.net" target="_blank">leadsaver.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$300</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://leastcommonmultiplecalculator.org" target="_blank">leastcommonmultiplecalculator.org</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://lifebalancesimulator.com" target="_blank">lifebalancesimulator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$250</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://llm.surf" target="_blank">llm.surf</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://llmlogs.com" target="_blank">llmlogs.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">localaiblueprint.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://marooncolor.net" target="_blank">marooncolor.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://matrixadditioncalculator.com" target="_blank">matrixadditioncalculator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">matrixcalculator.app</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://matrixsubtractioncalculator.com" target="_blank">matrixsubtractioncalculator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://moneymarketcalculator.net" target="_blank">moneymarketcalculator.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://mylocationnow.net" target="_blank">mylocationnow.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">nameofbusinessgenerator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">newyorkareacodes.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://newyorkzipcodes.net" target="_blank">newyorkzipcodes.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">nyccalculators.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://osugpacalculator.com" target="_blank">osugpacalculator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://png2ico.org" target="_blank">png2ico.org</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">postmore.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">promptmasters.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">promptpacks.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://prompty.bot" target="_blank">prompty.bot</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">random-generators.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://randomemojigenerator.com" target="_blank">randomemojigenerator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://resumebulletpointgenerator.com" target="_blank">resumebulletpointgenerator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">resumebulletpointsgenerator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">rexygame.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://rugsizecalculator.net" target="_blank">rugsizecalculator.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://rutgersgpacalculator.com" target="_blank">rutgersgpacalculator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">shouldiformanllc.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://sidehustleideas.io" target="_blank">sidehustleideas.io</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">simplemoneymap.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">snowdaycalulator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://startupdirectories.co" target="_blank">startupdirectories.co</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://subscriptiontracker.net" target="_blank">subscriptiontracker.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">systemofinequalities.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://tap.ninja" target="_blank">tap.ninja</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://tealcolor.net" target="_blank">tealcolor.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">tenstacks.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://textreels.net" target="_blank">textreels.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">thecalculatorworld.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$75</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://thehistoryofmaps.com" target="_blank">thehistoryofmaps.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$200</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">thisisthegreatestwebsiteontheinternet.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$10</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">tiiny.games</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://tiinygames.com" target="_blank">tiinygames.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$20</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://tip-calculators.com" target="_blank">tip-calculators.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">toolentry.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">torqueconverter.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">trendingideas.co</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">ufgpacalculator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">variancecalculator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$100</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://whatismyscreensize.com" target="_blank">whatismyscreensize.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-high">$1,000</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://whatisthepercent.com" target="_blank">whatisthepercent.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-medium">$75</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://whowrotethat.net" target="_blank">whowrotethat.net</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">whowrotethis.net</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+                <tr>
+                    <td class="domain-name">wisconsinpropertytaxcalculator.com</td>
+                    <td><span class="status status-domain">Domain Only</span></td>
+                    <td class="price price-medium">$50</td>
+                </tr>
+                <tr>
+                    <td class="domain-name"><a href="https://yearlywagecalculator.com" target="_blank">yearlywagecalculator.com</a></td>
+                    <td><span class="status status-website">Full Website</span></td>
+                    <td class="price price-low">$25</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+
+    <div class="sold-container">
+        <div class="sold-header">
+            <h2><i class="fas fa-check-circle"></i> Recently Sold Domains</h2>
+        </div>
+        <div class="sold-grid">
+            <div class="sold-domain">NicheTools.net</div>
+            <div class="sold-domain">BuildTheIdea.net</div>
+            <div class="sold-domain">Submit25.com</div>
+            <div class="sold-domain">RedditGrowthDB.com</div>
+            <div class="sold-domain">MicroSaaSIdeas.net</div>
+            <div class="sold-domain">Liiinks.net</div>
+            <div class="sold-domain">Cite.sh</div>
+            <div class="sold-domain">LoremFaces.net</div>
+            <div class="sold-domain">PMPrompts.net</div>
+            <div class="sold-domain">VibeCoders.bio</div>
+            <div class="sold-domain">TheIndieWall.net</div>
+        </div>
+    </div>
+
 </body>
 </html> 
